@@ -22,7 +22,7 @@ if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
         startButton.disabled = true;
         startButton.textContent = 'STOP...';
     });
-
+    
     imgButton.addEventListener('click', () => {
         recognition.start();
         imgButton.disabled = true;
@@ -40,6 +40,9 @@ if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
     recognition.addEventListener('end', () => {
         startButton.disabled = false;
         startButton.textContent = 'Start Listening';
+    });
+    
+    recognition.addEventListener('end', () => {
         imgButton.disabled = false;
         imgStartButton.src = "img/mic-1.png";
     });
@@ -48,12 +51,20 @@ if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
         console.error('Speech recognition error:', event.error);
         startButton.disabled = false;
         startButton.textContent = 'Start Listening';
+    });
+    
+    recognition.addEventListener('error', (event) => {
+        console.error('Speech recognition error:', event.error);
         imgButton.disabled = false;
         imgStartButton.src = "img/mic-1.png";
     });
+
+    
+    
 }
 
-// Reset button to clear voice input text
 resetBtn.addEventListener('click', () => {
-    outputDiv.textContent = ''; // Clear all text in the output div
+    outputDiv.textContent = '';
+    
 });
+

@@ -2,6 +2,7 @@ const startButton = document.getElementById('startButton');
 const outputDiv = document.getElementById('output');
 const imgButton = document.getElementById('imgButton');
 const imgStartButton = document.getElementById('imgStartButton');
+const resetBtn = document.getElementById('resetBtn');
 
 // Check if the browser supports the Web Speech API
 if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {

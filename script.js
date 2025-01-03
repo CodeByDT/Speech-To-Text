@@ -57,5 +57,9 @@ if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
         imgButton.disabled = false;
         imgStartButton.src = "img/mic-1.png";
     });
+    resetBtn.addEventListener('click', () => {
+        outputDiv.value = '';
+        
+    });
 }
 

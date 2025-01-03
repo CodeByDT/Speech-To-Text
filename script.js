@@ -61,7 +61,6 @@ if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
 }
 
 resetBtn.addEventListener('click', () => {
-        outputDiv.value = '';
-        
+       outputDiv.textContent = '';
     });
 
